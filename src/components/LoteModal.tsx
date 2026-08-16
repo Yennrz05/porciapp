@@ -22,9 +22,9 @@ export function LoteModal({
 }: LoteModalProps) {
   const [form, setForm] = useState({
     nombre: '',
-    numAnimales: 0,
-    semanaIngreso: 1,
-    inventarioKg: 0,
+    numAnimales: '',
+    semanaIngreso: String(getCurrentWeek()),
+    inventarioKg: '',
     notas: '',
   });
 
@@ -32,9 +32,9 @@ export function LoteModal({
     if (lote) {
       setForm({
         nombre: lote.nombre,
-        numAnimales: lote.numAnimales,
-        semanaIngreso: lote.semanaIngreso,
-        inventarioKg: lote.inventarioKg,
+        numAnimales: String(lote.numAnimales),
+        semanaIngreso: String(lote.semanaIngreso),
+        inventarioKg: String(lote.inventarioKg),
         notas: lote.notas,
       });
     }
@@ -42,13 +42,17 @@ export function LoteModal({
 
   const semanaActual = getCurrentWeek();
 
+  const num = Number(form.numAnimales) || 0;
+  const semana = Number(form.semanaIngreso) || 1;
+  const inv = Number(form.inventarioKg) || 0;
+
   const preview = calcularLote(
     {
       id: 'preview',
       nombre: form.nombre || 'Vista previa',
-      numAnimales: form.numAnimales,
-      semanaIngreso: form.semanaIngreso,
-      inventarioKg: form.inventarioKg,
+      numAnimales: num,
+      semanaIngreso: semana,
+      inventarioKg: inv,
       notas: '',
       fechaCreacion: '',
     },
@@ -63,9 +67,9 @@ export function LoteModal({
     if (!form.nombre.trim()) return;
     if (sinFase) return;
     if (lote) {
-      onSave({ ...lote, ...form });
+      onSave({ ...lote, ...form, numAnimales: num, semanaIngreso: semana, inventarioKg: inv });
     } else {
-      onSave(form);
+      onSave({ ...form, numAnimales: num, semanaIngreso: semana, inventarioKg: inv });
     }
     onClose();
   };
@@ -101,9 +105,8 @@ export function LoteModal({
                   type="number"
                   min="0"
                   value={form.numAnimales}
-                  onFocus={(e) => e.currentTarget.select()}
                   onChange={(e) =>
-                    setForm({ ...form, numAnimales: Number(e.target.value) })
+                    setForm({ ...form, numAnimales: e.target.value })
                   }
                 />
               </div>
@@ -114,9 +117,8 @@ export function LoteModal({
                   type="number"
                   min="0"
                   value={form.inventarioKg}
-                  onFocus={(e) => e.currentTarget.select()}
                   onChange={(e) =>
-                    setForm({ ...form, inventarioKg: Number(e.target.value) })
+                    setForm({ ...form, inventarioKg: e.target.value })
                   }
                 />
                 <span className="form-hint">Kilos disponibles hoy</span>
@@ -131,9 +133,8 @@ export function LoteModal({
                 min="1"
                 max="53"
                 value={form.semanaIngreso}
-                onFocus={(e) => e.currentTarget.select()}
                 onChange={(e) =>
-                  setForm({ ...form, semanaIngreso: Number(e.target.value) })
+                  setForm({ ...form, semanaIngreso: e.target.value })
                 }
               />
             </div>

@@ -92,7 +92,7 @@ export function Dashboard({
           <div className="stat-card__icon stat-card__icon--info">
             <Package />
           </div>
-          <div className="stat-card__label">Inventario Total</div>
+          <div className="stat-card__label">Inventario en Almacén</div>
           <div className="stat-card__value">{formatNumber(totalInventario)}</div>
           <div className="stat-card__sub">kg en almacén</div>
         </div>

@@ -12,33 +12,37 @@ interface FaseModalProps {
 export function FaseModal({ fase, onSave, onClose }: FaseModalProps) {
   const [form, setForm] = useState({
     nombre: '',
-    semanaInicio: 1,
-    semanaFin: 4,
-    consumoDiarioKg: 0.5,
+    semanaInicio: '1',
+    semanaFin: '4',
+    consumoDiarioKg: '0.5',
   });
 
   useEffect(() => {
     if (fase) {
       setForm({
         nombre: fase.nombre,
-        semanaInicio: fase.semanaInicio,
-        semanaFin: fase.semanaFin,
-        consumoDiarioKg: fase.consumoDiarioKg,
+        semanaInicio: String(fase.semanaInicio),
+        semanaFin: String(fase.semanaFin),
+        consumoDiarioKg: String(fase.consumoDiarioKg),
       });
     }
   }, [fase]);
 
+  const semanaInicioNum = Number(form.semanaInicio) || 1;
+  const semanaFinNum = Number(form.semanaFin) || 1;
+  const consumoNum = Number(form.consumoDiarioKg) || 0;
+
   const semanaValida =
-    form.semanaFin >= form.semanaInicio && form.semanaInicio >= 1;
+    semanaFinNum >= semanaInicioNum && semanaInicioNum >= 1;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.nombre.trim() || !semanaValida) return;
     const payload = {
       nombre: form.nombre.trim(),
-      semanaInicio: Number(form.semanaInicio) || 1,
-      semanaFin: Number(form.semanaFin) || 1,
-      consumoDiarioKg: Number(form.consumoDiarioKg) || 0,
+      semanaInicio: semanaInicioNum,
+      semanaFin: semanaFinNum,
+      consumoDiarioKg: consumoNum,
     };
     if (fase) {
       onSave({ ...fase, ...payload });
@@ -80,9 +84,8 @@ export function FaseModal({ fase, onSave, onClose }: FaseModalProps) {
                   min="1"
                   max="53"
                   value={form.semanaInicio}
-                  onFocus={(e) => e.currentTarget.select()}
                   onChange={(e) =>
-                    setForm({ ...form, semanaInicio: Number(e.target.value) })
+                    setForm({ ...form, semanaInicio: e.target.value })
                   }
                 />
               </div>
@@ -94,9 +97,8 @@ export function FaseModal({ fase, onSave, onClose }: FaseModalProps) {
                   min="1"
                   max="53"
                   value={form.semanaFin}
-                  onFocus={(e) => e.currentTarget.select()}
                   onChange={(e) =>
-                    setForm({ ...form, semanaFin: Number(e.target.value) })
+                    setForm({ ...form, semanaFin: e.target.value })
                   }
                 />
               </div>
@@ -114,13 +116,12 @@ export function FaseModal({ fase, onSave, onClose }: FaseModalProps) {
                 min="0"
                 step="0.01"
                 value={form.consumoDiarioKg}
-                onFocus={(e) => e.currentTarget.select()}
                 onChange={(e) =>
-                  setForm({ ...form, consumoDiarioKg: Number(e.target.value) })
+                  setForm({ ...form, consumoDiarioKg: e.target.value })
                 }
               />
               <span className="form-hint">
-                Consumo semanal por animal: {formatNumber(form.consumoDiarioKg * 7, 2)} kg
+                Consumo semanal por animal: {formatNumber(consumoNum * 7, 2)} kg
               </span>
             </div>
           </div>

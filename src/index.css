@@ -1607,6 +1607,8 @@ a {
   align-items: center;
   justify-content: center;
   padding: 16px;
+  padding-top: calc(16px + env(safe-area-inset-top, 0px));
+  padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
   animation: fadeIn 160ms ease;
 }
 
@@ -2251,7 +2253,11 @@ a {
 
   .modal {
     max-width: 100%;
-    max-height: 95vh;
+    max-height: calc(95vh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+  }
+
+  .modal__footer {
+    padding-bottom: calc(14px + env(safe-area-inset-bottom, 0px));
   }
 
   .data-action-card {

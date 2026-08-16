@@ -23,11 +23,13 @@ export function ConfigView({
   onResetData,
 }: ConfigViewProps) {
   const [form, setForm] = useState<Config>(config);
+  const [pesoForm, setPesoForm] = useState(String(config.pesoPorBache));
   const [nombreForm, setNombreForm] = useState(nombre);
   const [confirmReset, setConfirmReset] = useState(false);
 
   useEffect(() => {
     setForm(config);
+    setPesoForm(String(config.pesoPorBache));
   }, [config]);
 
   useEffect(() => {
@@ -36,7 +38,7 @@ export function ConfigView({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSave(form);
+    onSave({ ...form, pesoPorBache: Number(pesoForm) || 2700 });
     showToast('Configuración guardada correctamente', 'success');
   };
 
@@ -80,11 +82,8 @@ export function ConfigView({
                 id="pesoPorBache"
                 type="number"
                 min="1"
-                value={form.pesoPorBache}
-                onFocus={(e) => e.currentTarget.select()}
-                onChange={(e) =>
-                  setForm({ ...form, pesoPorBache: Number(e.target.value) })
-                }
+                value={pesoForm}
+                onChange={(e) => setPesoForm(e.target.value)}
               />
               <span className="form-hint">
                 Peso estándar de cada bache de alimento. Baches a pedir = Faltante ÷

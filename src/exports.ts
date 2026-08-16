@@ -42,7 +42,7 @@ export function exportarExcel(data: AppData): void {
     { Indicador: 'Fecha de Exportación', Valor: new Date().toLocaleString('es-ES') },
     { Indicador: 'Lotes Activos', Valor: data.lotes.length },
     { Indicador: 'Total de Animales', Valor: totalAnimales },
-    { Indicador: 'Inventario Total (kg)', Valor: totalInventario },
+    { Indicador: 'Inventario en Almacén (kg)', Valor: totalInventario },
     { Indicador: 'Requerimiento Semanal (kg)', Valor: totalRequerimiento },
     { Indicador: 'Faltante Total (kg)', Valor: totalDeficit },
     { Indicador: 'Peso por Bache (kg)', Valor: pesoPorBache },
