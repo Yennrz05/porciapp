@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const THEME_KEY = 'porciapp_theme_v1';
+const THEME_KEY = 'porciapp_theme_v2';
 
 type Theme = 'light' | 'dark';
 
@@ -11,9 +11,6 @@ function getInitialTheme(): Theme {
   } catch {
     // localStorage no disponible
   }
-  if (typeof window.matchMedia === 'function') {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
   return 'light';
 }
 
@@ -22,15 +19,18 @@ export function useTheme() {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
-    try {
-      localStorage.setItem(THEME_KEY, theme);
-    } catch {
-      // localStorage no disponible
-    }
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((t) => (t === 'light' ? 'dark' : 'light'));
+    setTheme((t) => {
+      const next = t === 'light' ? 'dark' : 'light';
+      try {
+        localStorage.setItem(THEME_KEY, next);
+      } catch {
+        // localStorage no disponible
+      }
+      return next;
+    });
   };
 
   return { theme, toggleTheme };

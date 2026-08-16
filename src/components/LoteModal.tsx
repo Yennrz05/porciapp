@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
-import { X, CalendarDays, PiggyBank } from 'lucide-react';
-import type { Lote, FaseConsumo } from '@/types';
+import { X, CalendarDays, PiggyBank, AlertTriangle, ArrowRight } from 'lucide-react';
+import type { Lote, FaseConsumo, View } from '@/types';
 import { calcularLote, getCurrentWeek, formatNumber, formatKg, plural } from '@/utils';
 
 interface LoteModalProps {
   lote: Lote | null;
   fases: FaseConsumo[];
   pesoPorBache: number;
+  onNavigate: (view: View) => void;
   onSave: (lote: Omit<Lote, 'id' | 'fechaCreacion'> | Lote) => void;
   onClose: () => void;
 }
@@ -15,6 +16,7 @@ export function LoteModal({
   lote,
   fases,
   pesoPorBache,
+  onNavigate,
   onSave,
   onClose,
 }: LoteModalProps) {
@@ -54,9 +56,12 @@ export function LoteModal({
     { pesoPorBache }
   );
 
+  const sinFase = !preview.faseId;
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.nombre.trim()) return;
+    if (sinFase) return;
     if (lote) {
       onSave({ ...lote, ...form });
     } else {
@@ -96,6 +101,7 @@ export function LoteModal({
                   type="number"
                   min="0"
                   value={form.numAnimales}
+                  onFocus={(e) => e.currentTarget.select()}
                   onChange={(e) =>
                     setForm({ ...form, numAnimales: Number(e.target.value) })
                   }
@@ -108,6 +114,7 @@ export function LoteModal({
                   type="number"
                   min="0"
                   value={form.inventarioKg}
+                  onFocus={(e) => e.currentTarget.select()}
                   onChange={(e) =>
                     setForm({ ...form, inventarioKg: Number(e.target.value) })
                   }
@@ -124,11 +131,31 @@ export function LoteModal({
                 min="1"
                 max="53"
                 value={form.semanaIngreso}
+                onFocus={(e) => e.currentTarget.select()}
                 onChange={(e) =>
                   setForm({ ...form, semanaIngreso: Number(e.target.value) })
                 }
               />
             </div>
+
+            {sinFase && (
+              <div className="form-error form-error--warning">
+                <div className="form-error__row">
+                  <AlertTriangle />
+                  <span>
+                    No existe una fase de consumo que cubra las semanas de este lote.
+                    Crea una fase antes de guardarlo.
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  className="form-error__link"
+                  onClick={() => onNavigate('fases')}
+                >
+                  Ir a Fases de Consumo <ArrowRight />
+                </button>
+              </div>
+            )}
 
             <div className="preview-panel">
               <div className="preview-panel__header">
@@ -206,7 +233,7 @@ export function LoteModal({
             <button type="button" className="btn btn--ghost" onClick={onClose}>
               Cancelar
             </button>
-            <button type="submit" className="btn btn--primary">
+            <button type="submit" className="btn btn--primary" disabled={sinFase || !form.nombre.trim()}>
               {lote ? 'Guardar Cambios' : 'Crear Lote'}
             </button>
           </div>

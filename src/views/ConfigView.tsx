@@ -81,6 +81,7 @@ export function ConfigView({
                 type="number"
                 min="1"
                 value={form.pesoPorBache}
+                onFocus={(e) => e.currentTarget.select()}
                 onChange={(e) =>
                   setForm({ ...form, pesoPorBache: Number(e.target.value) })
                 }

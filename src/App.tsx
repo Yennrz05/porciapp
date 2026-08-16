@@ -114,6 +114,7 @@ function App() {
               onAddLote={addLote}
               onUpdateLote={updateLote}
               onDeleteLote={deleteLote}
+              onNavigate={setView}
               showToast={showToast}
             />
           )}

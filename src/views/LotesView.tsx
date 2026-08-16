@@ -8,7 +8,7 @@ import {
   CalendarDays,
   Search,
 } from 'lucide-react';
-import type { AppData, Lote, LoteCalculado } from '@/types';
+import type { AppData, Lote, LoteCalculado, View } from '@/types';
 import { calcularTodos, formatNumber, formatKg, getCurrentWeek, plural, estadoDescripcion } from '@/utils';
 import { LoteModal } from '@/components/LoteModal';
 import { ConfirmDialog } from '@/components/ConfirmDialog';
@@ -18,6 +18,7 @@ interface LotesViewProps {
   onAddLote: (lote: Omit<Lote, 'id' | 'fechaCreacion'>) => void;
   onUpdateLote: (id: string, updates: Partial<Lote>) => void;
   onDeleteLote: (id: string) => void;
+  onNavigate: (view: View) => void;
   showToast: (msg: string, type?: 'success' | 'error' | 'warning' | 'info') => void;
 }
 
@@ -26,6 +27,7 @@ export function LotesView({
   onAddLote,
   onUpdateLote,
   onDeleteLote,
+  onNavigate,
   showToast,
 }: LotesViewProps) {
   const [modalOpen, setModalOpen] = useState(false);
@@ -224,6 +226,7 @@ export function LotesView({
           lote={editingLote}
           fases={data.fases}
           pesoPorBache={data.config.pesoPorBache}
+          onNavigate={onNavigate}
           onSave={handleSave}
           onClose={() => setModalOpen(false)}
         />

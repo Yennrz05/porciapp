@@ -80,6 +80,7 @@ export function FaseModal({ fase, onSave, onClose }: FaseModalProps) {
                   min="1"
                   max="53"
                   value={form.semanaInicio}
+                  onFocus={(e) => e.currentTarget.select()}
                   onChange={(e) =>
                     setForm({ ...form, semanaInicio: Number(e.target.value) })
                   }
@@ -93,6 +94,7 @@ export function FaseModal({ fase, onSave, onClose }: FaseModalProps) {
                   min="1"
                   max="53"
                   value={form.semanaFin}
+                  onFocus={(e) => e.currentTarget.select()}
                   onChange={(e) =>
                     setForm({ ...form, semanaFin: Number(e.target.value) })
                   }
@@ -112,6 +114,7 @@ export function FaseModal({ fase, onSave, onClose }: FaseModalProps) {
                 min="0"
                 step="0.01"
                 value={form.consumoDiarioKg}
+                onFocus={(e) => e.currentTarget.select()}
                 onChange={(e) =>
                   setForm({ ...form, consumoDiarioKg: Number(e.target.value) })
                 }
