@@ -37,6 +37,7 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,png,svg,ico,woff2}'],
         navigateFallback: '/porciapp/index.html',
+        cleanupOutdatedCaches: true,
       },
     }),
   ],
