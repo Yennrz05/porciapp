@@ -36,6 +36,7 @@ function App() {
     updateFase,
     deleteFase,
     importData,
+    resetData,
   } = useAppData();
   const { profile, desbloquear, bloquear, cambiarNombre } = useAuth();
   const { theme, toggleTheme } = useTheme();
@@ -136,6 +137,7 @@ function App() {
               nombre={profile.nombre}
               onCambiarNombre={cambiarNombre}
               onBloquear={bloquear}
+              onResetData={resetData}
             />
           )}
         </main>

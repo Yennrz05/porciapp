@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Save, Settings, UserRound, Lock } from 'lucide-react';
+import { Save, Settings, UserRound, Lock, Trash2 } from 'lucide-react';
 import type { Config } from '@/types';
+import { ConfirmDialog } from '@/components/ConfirmDialog';
 
 interface ConfigViewProps {
   config: Config;
@@ -9,6 +10,7 @@ interface ConfigViewProps {
   nombre: string;
   onCambiarNombre: (nombre: string) => void;
   onBloquear: () => void;
+  onResetData: () => void;
 }
 
 export function ConfigView({
@@ -18,9 +20,11 @@ export function ConfigView({
   nombre,
   onCambiarNombre,
   onBloquear,
+  onResetData,
 }: ConfigViewProps) {
   const [form, setForm] = useState<Config>(config);
   const [nombreForm, setNombreForm] = useState(nombre);
+  const [confirmReset, setConfirmReset] = useState(false);
 
   useEffect(() => {
     setForm(config);
@@ -131,7 +135,45 @@ export function ConfigView({
           </div>
         </form>
       </div>
+
+      <div className="card">
+        <div className="card__header">
+          <span className="card__title">
+            <Trash2 /> Eliminar todos los datos
+          </span>
+        </div>
+        <div className="card__body">
+          <p className="form-hint">
+            Borra todos los lotes y fases de consumo, y restablece la configuración a
+            los valores por defecto. Tu nombre y preferencias de cuenta se conservan.
+            Esta acción no se puede deshacer.
+          </p>
+        </div>
+        <div className="modal__footer">
+          <button
+            type="button"
+            className="btn btn--danger"
+            onClick={() => setConfirmReset(true)}
+          >
+            <Trash2 />
+            Eliminar todos los datos
+          </button>
+        </div>
       </div>
+      </div>
+
+      <ConfirmDialog
+        open={confirmReset}
+        title="Eliminar todos los datos"
+        message="Se eliminarán todos los lotes y fases de consumo, y la configuración volverá a los valores por defecto. Tu nombre se conserva. Esta acción no se puede deshacer."
+        confirmLabel="Eliminar todo"
+        onConfirm={() => {
+          onResetData();
+          setConfirmReset(false);
+          showToast('Todos los datos fueron eliminados', 'success');
+        }}
+        onCancel={() => setConfirmReset(false)}
+      />
     </div>
   );
 }

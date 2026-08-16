@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Lock, LogIn } from 'lucide-react';
+import { Lock, LogIn, Eye, EyeOff } from 'lucide-react';
 
 interface LockScreenProps {
   onUnlock: (nombre: string, clave: string) => boolean;
@@ -8,6 +8,7 @@ interface LockScreenProps {
 export function LockScreen({ onUnlock }: LockScreenProps) {
   const [nombre, setNombre] = useState('');
   const [clave, setClave] = useState('');
+  const [verClave, setVerClave] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -39,7 +40,7 @@ export function LockScreen({ onUnlock }: LockScreenProps) {
             <input
               id="lock-nombre"
               type="text"
-              placeholder="Juan Pérez"
+              placeholder="Nombre"
               value={nombre}
               autoComplete="off"
               onChange={(e) => {
@@ -51,16 +52,27 @@ export function LockScreen({ onUnlock }: LockScreenProps) {
 
           <div className="form-group">
             <label htmlFor="lock-clave">Clave de acceso</label>
-            <input
-              id="lock-clave"
-              type="password"
-              placeholder="Tu clave"
-              value={clave}
-              onChange={(e) => {
-                setClave(e.target.value);
-                setError(null);
-              }}
-            />
+            <div className="password-field">
+              <input
+                id="lock-clave"
+                type={verClave ? 'text' : 'password'}
+                placeholder="Clave"
+                value={clave}
+                onChange={(e) => {
+                  setClave(e.target.value);
+                  setError(null);
+                }}
+              />
+              <button
+                type="button"
+                className="password-toggle"
+                aria-label={verClave ? 'Ocultar clave' : 'Mostrar clave'}
+                title={verClave ? 'Ocultar clave' : 'Mostrar clave'}
+                onClick={() => setVerClave((v) => !v)}
+              >
+                {verClave ? <EyeOff /> : <Eye />}
+              </button>
+            </div>
           </div>
 
           {error && <div className="form-error">{error}</div>}

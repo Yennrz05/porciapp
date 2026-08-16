@@ -69,6 +69,10 @@ export function useAppData() {
     });
   }, []);
 
+  const resetData = useCallback(() => {
+    setData(getDefaultData());
+  }, []);
+
   return {
     data,
     updateConfig,
@@ -79,6 +83,7 @@ export function useAppData() {
     updateFase,
     deleteFase,
     importData,
+    resetData,
   };
 }
 
