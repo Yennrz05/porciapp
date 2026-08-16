@@ -1,9 +1,9 @@
 import { useRef } from 'react';
-import { Download, Upload, FileSpreadsheet, FileJson, Database } from 'lucide-react';
+import { Download, Upload, FileJson, Database } from 'lucide-react';
 import type { AppData } from '@/types';
 import { formatNumber } from '@/utils';
 import { APP_VERSION } from '@/utils';
-import { exportarExcel, setLastBackup } from '@/exports';
+import { setLastBackup } from '@/exports';
 
 interface DatosViewProps {
   data: AppData;
@@ -30,15 +30,6 @@ export function DatosView({ data, onImport, showToast }: DatosViewProps) {
     URL.revokeObjectURL(url);
     setLastBackup();
     showToast('Backup JSON exportado correctamente', 'success');
-  };
-
-  const exportXLSX = () => {
-    if (sinDatos) {
-      showToast('No hay datos para exportar. Crea al menos una fase o un lote.', 'warning');
-      return;
-    }
-    exportarExcel(data);
-    showToast('Archivo Excel exportado correctamente', 'success');
   };
 
   const handleImportClick = () => {
@@ -83,7 +74,7 @@ export function DatosView({ data, onImport, showToast }: DatosViewProps) {
         <div className="section-header__left">
           <span className="section-header__title">Importar / Exportar Datos</span>
           <span className="section-header__subtitle">
-            Gestión de respaldos y exportación a Excel
+            Gestión de respaldos de la aplicación
           </span>
         </div>
       </div>
@@ -134,25 +125,6 @@ export function DatosView({ data, onImport, showToast }: DatosViewProps) {
             </div>
           </div>
         </div>
-        </div>
-
-        <div className="data-action-card data-action-card--featured">
-          <div className="data-action-card__icon data-action-card__icon--orange">
-            <FileSpreadsheet />
-          </div>
-          <div className="data-action-card__content">
-            <div className="data-action-card__title">Exportar a Excel (XLSX)</div>
-            <div className="data-action-card__desc">
-              Genera un archivo Excel con 4 hojas: Resumen general, Pedido semanal por
-              baches, Lotes con cálculos detallados y Fases de consumo.
-            </div>
-            <div className="data-action-card__actions">
-              <button className="btn btn--accent" onClick={exportXLSX} disabled={sinDatos}>
-                <Download />
-                Descargar Excel
-              </button>
-            </div>
-          </div>
         </div>
 
         <div className="card">

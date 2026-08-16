@@ -1,0 +1,945 @@
+{
+  "lotes": [
+    {
+      "id": "lote-ejemplo-001",
+      "nombre": "Lote El Roble",
+      "numAnimales": 335,
+      "semanaIngreso": 23,
+      "inventarioKg": 6228,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-002",
+      "nombre": "Lote La Palma",
+      "numAnimales": 210,
+      "semanaIngreso": 7,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-003",
+      "nombre": "Lote Santa Cruz",
+      "numAnimales": 219,
+      "semanaIngreso": 29,
+      "inventarioKg": 388,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-004",
+      "nombre": "Lote El Sauce",
+      "numAnimales": 196,
+      "semanaIngreso": 12,
+      "inventarioKg": 657,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-005",
+      "nombre": "Lote Las Palmas",
+      "numAnimales": 312,
+      "semanaIngreso": 20,
+      "inventarioKg": 1089,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-006",
+      "nombre": "Lote La Ceiba",
+      "numAnimales": 373,
+      "semanaIngreso": 2,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-007",
+      "nombre": "Lote El Naranjo",
+      "numAnimales": 338,
+      "semanaIngreso": 24,
+      "inventarioKg": 992,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-008",
+      "nombre": "Lote San Pedro",
+      "numAnimales": 224,
+      "semanaIngreso": 11,
+      "inventarioKg": 10374,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-009",
+      "nombre": "Lote La Vega",
+      "numAnimales": 472,
+      "semanaIngreso": 21,
+      "inventarioKg": 9562,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-010",
+      "nombre": "Lote El Manantial",
+      "numAnimales": 193,
+      "semanaIngreso": 5,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-011",
+      "nombre": "Lote Las Flores",
+      "numAnimales": 470,
+      "semanaIngreso": 31,
+      "inventarioKg": 3862,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-012",
+      "nombre": "Lote Santa Ana",
+      "numAnimales": 303,
+      "semanaIngreso": 27,
+      "inventarioKg": 3633,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-013",
+      "nombre": "Lote El Durazno",
+      "numAnimales": 159,
+      "semanaIngreso": 28,
+      "inventarioKg": 433,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-014",
+      "nombre": "Lote La Esperanza",
+      "numAnimales": 248,
+      "semanaIngreso": 32,
+      "inventarioKg": 1846,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-015",
+      "nombre": "Lote San José",
+      "numAnimales": 199,
+      "semanaIngreso": 5,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-016",
+      "nombre": "Lote El Tambor",
+      "numAnimales": 336,
+      "semanaIngreso": 16,
+      "inventarioKg": 853,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-017",
+      "nombre": "Lote La Magdalena",
+      "numAnimales": 229,
+      "semanaIngreso": 9,
+      "inventarioKg": 1973,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-018",
+      "nombre": "Lote San Francisco",
+      "numAnimales": 319,
+      "semanaIngreso": 32,
+      "inventarioKg": 2515,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-019",
+      "nombre": "Lote El Paraiso",
+      "numAnimales": 158,
+      "semanaIngreso": 8,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-020",
+      "nombre": "Lote San Juan",
+      "numAnimales": 231,
+      "semanaIngreso": 16,
+      "inventarioKg": 392,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-021",
+      "nombre": "Lote El Roble 2",
+      "numAnimales": 477,
+      "semanaIngreso": 4,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-022",
+      "nombre": "Lote La Palma 2",
+      "numAnimales": 182,
+      "semanaIngreso": 8,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-023",
+      "nombre": "Lote Santa Cruz 2",
+      "numAnimales": 435,
+      "semanaIngreso": 8,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-024",
+      "nombre": "Lote El Sauce 2",
+      "numAnimales": 195,
+      "semanaIngreso": 12,
+      "inventarioKg": 3038,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-025",
+      "nombre": "Lote Las Palmas 2",
+      "numAnimales": 154,
+      "semanaIngreso": 26,
+      "inventarioKg": 569,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-026",
+      "nombre": "Lote La Ceiba 2",
+      "numAnimales": 185,
+      "semanaIngreso": 10,
+      "inventarioKg": 918,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-027",
+      "nombre": "Lote El Naranjo 2",
+      "numAnimales": 361,
+      "semanaIngreso": 10,
+      "inventarioKg": 901,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-028",
+      "nombre": "Lote San Pedro 2",
+      "numAnimales": 265,
+      "semanaIngreso": 4,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-029",
+      "nombre": "Lote La Vega 2",
+      "numAnimales": 195,
+      "semanaIngreso": 31,
+      "inventarioKg": 499,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-030",
+      "nombre": "Lote El Manantial 2",
+      "numAnimales": 151,
+      "semanaIngreso": 12,
+      "inventarioKg": 4713,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-031",
+      "nombre": "Lote Las Flores 2",
+      "numAnimales": 493,
+      "semanaIngreso": 7,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-032",
+      "nombre": "Lote Santa Ana 2",
+      "numAnimales": 352,
+      "semanaIngreso": 32,
+      "inventarioKg": 1684,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-033",
+      "nombre": "Lote El Durazno 2",
+      "numAnimales": 411,
+      "semanaIngreso": 3,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-034",
+      "nombre": "Lote La Esperanza 2",
+      "numAnimales": 348,
+      "semanaIngreso": 4,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-035",
+      "nombre": "Lote San José 2",
+      "numAnimales": 275,
+      "semanaIngreso": 26,
+      "inventarioKg": 4511,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-036",
+      "nombre": "Lote El Tambor 2",
+      "numAnimales": 231,
+      "semanaIngreso": 3,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-037",
+      "nombre": "Lote La Magdalena 2",
+      "numAnimales": 303,
+      "semanaIngreso": 23,
+      "inventarioKg": 1434,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-038",
+      "nombre": "Lote San Francisco 2",
+      "numAnimales": 306,
+      "semanaIngreso": 31,
+      "inventarioKg": 360,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-039",
+      "nombre": "Lote El Paraiso 2",
+      "numAnimales": 229,
+      "semanaIngreso": 29,
+      "inventarioKg": 619,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-040",
+      "nombre": "Lote San Juan 2",
+      "numAnimales": 344,
+      "semanaIngreso": 8,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-041",
+      "nombre": "Lote El Roble 3",
+      "numAnimales": 239,
+      "semanaIngreso": 8,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-042",
+      "nombre": "Lote La Palma 3",
+      "numAnimales": 215,
+      "semanaIngreso": 18,
+      "inventarioKg": 1111,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-043",
+      "nombre": "Lote Santa Cruz 3",
+      "numAnimales": 360,
+      "semanaIngreso": 31,
+      "inventarioKg": 105,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-044",
+      "nombre": "Lote El Sauce 3",
+      "numAnimales": 438,
+      "semanaIngreso": 26,
+      "inventarioKg": 1946,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-045",
+      "nombre": "Lote Las Palmas 3",
+      "numAnimales": 190,
+      "semanaIngreso": 19,
+      "inventarioKg": 571,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-046",
+      "nombre": "Lote La Ceiba 3",
+      "numAnimales": 189,
+      "semanaIngreso": 12,
+      "inventarioKg": 2988,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-047",
+      "nombre": "Lote El Naranjo 3",
+      "numAnimales": 304,
+      "semanaIngreso": 2,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-048",
+      "nombre": "Lote San Pedro 3",
+      "numAnimales": 463,
+      "semanaIngreso": 12,
+      "inventarioKg": 19824,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-049",
+      "nombre": "Lote La Vega 3",
+      "numAnimales": 229,
+      "semanaIngreso": 3,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-050",
+      "nombre": "Lote El Manantial 3",
+      "numAnimales": 288,
+      "semanaIngreso": 6,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-051",
+      "nombre": "Lote Las Flores 3",
+      "numAnimales": 292,
+      "semanaIngreso": 14,
+      "inventarioKg": 6793,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-052",
+      "nombre": "Lote Santa Ana 3",
+      "numAnimales": 218,
+      "semanaIngreso": 15,
+      "inventarioKg": 6660,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-053",
+      "nombre": "Lote El Durazno 3",
+      "numAnimales": 500,
+      "semanaIngreso": 17,
+      "inventarioKg": 15545,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-054",
+      "nombre": "Lote La Esperanza 3",
+      "numAnimales": 394,
+      "semanaIngreso": 18,
+      "inventarioKg": 1636,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-055",
+      "nombre": "Lote San José 3",
+      "numAnimales": 493,
+      "semanaIngreso": 4,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-056",
+      "nombre": "Lote El Tambor 3",
+      "numAnimales": 227,
+      "semanaIngreso": 20,
+      "inventarioKg": 2463,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-057",
+      "nombre": "Lote La Magdalena 3",
+      "numAnimales": 260,
+      "semanaIngreso": 13,
+      "inventarioKg": 2351,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-058",
+      "nombre": "Lote San Francisco 3",
+      "numAnimales": 304,
+      "semanaIngreso": 22,
+      "inventarioKg": 6918,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-059",
+      "nombre": "Lote El Paraiso 3",
+      "numAnimales": 202,
+      "semanaIngreso": 18,
+      "inventarioKg": 6750,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-060",
+      "nombre": "Lote San Juan 3",
+      "numAnimales": 430,
+      "semanaIngreso": 21,
+      "inventarioKg": 2729,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-061",
+      "nombre": "Lote El Roble 4",
+      "numAnimales": 375,
+      "semanaIngreso": 3,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-062",
+      "nombre": "Lote La Palma 4",
+      "numAnimales": 365,
+      "semanaIngreso": 25,
+      "inventarioKg": 1555,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-063",
+      "nombre": "Lote Santa Cruz 4",
+      "numAnimales": 169,
+      "semanaIngreso": 24,
+      "inventarioKg": 2528,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-064",
+      "nombre": "Lote El Sauce 4",
+      "numAnimales": 474,
+      "semanaIngreso": 8,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-065",
+      "nombre": "Lote Las Palmas 4",
+      "numAnimales": 304,
+      "semanaIngreso": 23,
+      "inventarioKg": 2012,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-066",
+      "nombre": "Lote La Ceiba 4",
+      "numAnimales": 372,
+      "semanaIngreso": 16,
+      "inventarioKg": 324,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-067",
+      "nombre": "Lote El Naranjo 4",
+      "numAnimales": 236,
+      "semanaIngreso": 20,
+      "inventarioKg": 786,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-068",
+      "nombre": "Lote San Pedro 4",
+      "numAnimales": 287,
+      "semanaIngreso": 12,
+      "inventarioKg": 7828,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-069",
+      "nombre": "Lote La Vega 4",
+      "numAnimales": 406,
+      "semanaIngreso": 7,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-070",
+      "nombre": "Lote El Manantial 4",
+      "numAnimales": 468,
+      "semanaIngreso": 3,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-071",
+      "nombre": "Lote Las Flores 4",
+      "numAnimales": 288,
+      "semanaIngreso": 29,
+      "inventarioKg": 350,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-072",
+      "nombre": "Lote Santa Ana 4",
+      "numAnimales": 169,
+      "semanaIngreso": 8,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-073",
+      "nombre": "Lote El Durazno 4",
+      "numAnimales": 328,
+      "semanaIngreso": 29,
+      "inventarioKg": 361,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-074",
+      "nombre": "Lote La Esperanza 4",
+      "numAnimales": 352,
+      "semanaIngreso": 15,
+      "inventarioKg": 14098,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-075",
+      "nombre": "Lote San José 4",
+      "numAnimales": 441,
+      "semanaIngreso": 10,
+      "inventarioKg": 4386,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-076",
+      "nombre": "Lote El Tambor 4",
+      "numAnimales": 297,
+      "semanaIngreso": 26,
+      "inventarioKg": 1950,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-077",
+      "nombre": "Lote La Magdalena 4",
+      "numAnimales": 226,
+      "semanaIngreso": 3,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-078",
+      "nombre": "Lote San Francisco 4",
+      "numAnimales": 270,
+      "semanaIngreso": 32,
+      "inventarioKg": 469,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-079",
+      "nombre": "Lote El Paraiso 4",
+      "numAnimales": 426,
+      "semanaIngreso": 19,
+      "inventarioKg": 10911,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-080",
+      "nombre": "Lote San Juan 4",
+      "numAnimales": 468,
+      "semanaIngreso": 28,
+      "inventarioKg": 2936,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-081",
+      "nombre": "Lote El Roble 5",
+      "numAnimales": 371,
+      "semanaIngreso": 8,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-082",
+      "nombre": "Lote La Palma 5",
+      "numAnimales": 289,
+      "semanaIngreso": 3,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-083",
+      "nombre": "Lote Santa Cruz 5",
+      "numAnimales": 471,
+      "semanaIngreso": 14,
+      "inventarioKg": 5207,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-084",
+      "nombre": "Lote El Sauce 5",
+      "numAnimales": 156,
+      "semanaIngreso": 23,
+      "inventarioKg": 431,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-085",
+      "nombre": "Lote Las Palmas 5",
+      "numAnimales": 228,
+      "semanaIngreso": 21,
+      "inventarioKg": 2075,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-086",
+      "nombre": "Lote La Ceiba 5",
+      "numAnimales": 254,
+      "semanaIngreso": 17,
+      "inventarioKg": 6263,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-087",
+      "nombre": "Lote El Naranjo 5",
+      "numAnimales": 243,
+      "semanaIngreso": 32,
+      "inventarioKg": 96,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-088",
+      "nombre": "Lote San Pedro 5",
+      "numAnimales": 365,
+      "semanaIngreso": 23,
+      "inventarioKg": 3096,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-089",
+      "nombre": "Lote La Vega 5",
+      "numAnimales": 469,
+      "semanaIngreso": 13,
+      "inventarioKg": 605,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-090",
+      "nombre": "Lote El Manantial 5",
+      "numAnimales": 279,
+      "semanaIngreso": 6,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-091",
+      "nombre": "Lote Las Flores 5",
+      "numAnimales": 165,
+      "semanaIngreso": 26,
+      "inventarioKg": 1828,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-092",
+      "nombre": "Lote Santa Ana 5",
+      "numAnimales": 228,
+      "semanaIngreso": 27,
+      "inventarioKg": 1156,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-093",
+      "nombre": "Lote El Durazno 5",
+      "numAnimales": 446,
+      "semanaIngreso": 32,
+      "inventarioKg": 2921,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-094",
+      "nombre": "Lote La Esperanza 5",
+      "numAnimales": 162,
+      "semanaIngreso": 24,
+      "inventarioKg": 3664,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-095",
+      "nombre": "Lote San José 5",
+      "numAnimales": 468,
+      "semanaIngreso": 7,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-096",
+      "nombre": "Lote El Tambor 5",
+      "numAnimales": 183,
+      "semanaIngreso": 22,
+      "inventarioKg": 794,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-097",
+      "nombre": "Lote La Magdalena 5",
+      "numAnimales": 379,
+      "semanaIngreso": 9,
+      "inventarioKg": 5413,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-098",
+      "nombre": "Lote San Francisco 5",
+      "numAnimales": 335,
+      "semanaIngreso": 24,
+      "inventarioKg": 5116,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-099",
+      "nombre": "Lote El Paraiso 5",
+      "numAnimales": 276,
+      "semanaIngreso": 4,
+      "inventarioKg": 0,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "lote-ejemplo-100",
+      "nombre": "Lote San Juan 5",
+      "numAnimales": 232,
+      "semanaIngreso": 11,
+      "inventarioKg": 12616,
+      "notas": "",
+      "fechaCreacion": "2026-01-15T10:00:00.000Z"
+    }
+  ],
+  "fases": [
+    {
+      "id": "f1-ejemplo",
+      "nombre": "Fase 1 – Inicio",
+      "semanaInicio": 1,
+      "semanaFin": 4,
+      "consumoDiarioKg": 0.5
+    },
+    {
+      "id": "f2-ejemplo",
+      "nombre": "Fase 2 – Crecimiento",
+      "semanaInicio": 5,
+      "semanaFin": 8,
+      "consumoDiarioKg": 1.2
+    },
+    {
+      "id": "f3-ejemplo",
+      "nombre": "Fase 3 – Desarrollo",
+      "semanaInicio": 9,
+      "semanaFin": 14,
+      "consumoDiarioKg": 2
+    },
+    {
+      "id": "f4-ejemplo",
+      "nombre": "Fase 4 – Engorde",
+      "semanaInicio": 15,
+      "semanaFin": 20,
+      "consumoDiarioKg": 2.8
+    },
+    {
+      "id": "f5-ejemplo",
+      "nombre": "Fase 5 – Finalización",
+      "semanaInicio": 21,
+      "semanaFin": 24,
+      "consumoDiarioKg": 3.2
+    }
+  ],
+  "config": {
+    "pesoPorBache": 2700
+  },
+  "version": "1.1.0"
+}

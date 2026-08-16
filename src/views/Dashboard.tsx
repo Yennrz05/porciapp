@@ -4,9 +4,9 @@ import {
   Wheat,
   Package,
   TrendingUp,
-  ClipboardList,
   CalendarDays,
   Truck,
+  AlertTriangle,
 } from 'lucide-react';
 import type { AppData, View } from '@/types';
 import {
@@ -16,7 +16,6 @@ import {
   getCurrentWeek,
   getSemanaRango,
   plural,
-  estadoDescripcion,
 } from '@/utils';
 
 export function Dashboard({
@@ -37,8 +36,11 @@ export function Dashboard({
   const totalBaches = lotesCalc.reduce((s, l) => s + l.bachesAPedir, 0);
 
   const lotesAlerta = lotesCalc.filter((l) => l.estado !== 'ok');
-  const lotesDanger = lotesCalc.filter((l) => l.estado === 'danger');
   const conPedido = lotesCalc.filter((l) => l.bachesAPedir > 0);
+
+  const alertas1 = lotesAlerta.filter((l) => l.bachesAPedir === 1).length;
+  const alertas2 = lotesAlerta.filter((l) => l.bachesAPedir === 2).length;
+  const alertas3 = lotesAlerta.filter((l) => l.bachesAPedir >= 3).length;
 
   const goLotes = () => onNavigate('lotes');
   const keyHandler = (e: KeyboardEvent) => {
@@ -119,7 +121,13 @@ export function Dashboard({
       </div>
 
       <div className="dash-cols">
-        <div className="order-card">
+        <div
+          className="order-card"
+          role="button"
+          tabIndex={0}
+          onClick={goLotes}
+          onKeyDown={keyHandler}
+        >
           <div className="order-card__header">
             <div className="order-card__icon">
               <Truck />
@@ -135,139 +143,63 @@ export function Dashboard({
               {formatNumber(totalBaches * data.config.pesoPorBache)} kg
             </div>
           </div>
-          <div className="order-card__list">
+          <div className="order-card__summary">
             {conPedido.length === 0 ? (
-              <div className="order-card__empty">
-                Inventario suficiente para todos los lotes. No hay baches que pedir.
-              </div>
+              <span className="text-success">Inventario suficiente. No hay baches que pedir.</span>
             ) : (
-              conPedido.map((l) => (
-                <div key={l.id} className="order-card__item">
-                  <div>
-                    <strong>{l.nombre}</strong>
-                    <span>
-                      {l.faseNombre} · {l.edadSemanas} sem · {formatNumber(l.numAnimales)} animales
-                    </span>
-                  </div>
-                  <div>
-                    <span className="order-card__kg">{formatNumber(l.deficitKg)} kg</span>
-                    <strong>{plural(l.bachesAPedir, 'bache', 'baches')}</strong>
-                  </div>
-                </div>
-              ))
+              <span>{plural(conPedido.length, 'lote necesita', 'lotes necesitan')} alimento esta semana</span>
             )}
           </div>
         </div>
 
-        <div className="card dash-alerts">
+        <div
+          className="card dash-alerts"
+          role="button"
+          tabIndex={0}
+          onClick={goLotes}
+          onKeyDown={keyHandler}
+        >
           <div className="card__header">
             <span className="card__title">Alertas de Inventario</span>
             <span className="badge badge--neutral">
-              {plural(lotesAlerta.length, 'alerta', 'alertas')} ·{' '}
-              {plural(lotesDanger.length, 'crítica', 'críticas')}
+              {plural(lotesAlerta.length, 'alerta', 'alertas')}
             </span>
           </div>
           <div className="card__body">
             {lotesAlerta.length === 0 ? (
-              <div className="empty-state">
+              <div className="empty-state dash-alerts__empty">
                 <div className="empty-state__icon">
-                  <ClipboardList />
+                  <AlertTriangle />
                 </div>
                 <div className="empty-state__title">Sin alertas</div>
                 <div className="empty-state__text">
-                  Todos los lotes tienen inventario suficiente para la semana.
+                  Todos los lotes tienen inventario suficiente.
                 </div>
               </div>
             ) : (
-              <>
-                <div className="table-wrap desktop-table">
-                  <table className="table">
-                    <thead>
-                      <tr>
-                        <th>Lote</th>
-                        <th>Fase</th>
-                        <th>Requer.</th>
-                        <th>Inv.</th>
-                        <th>Baches</th>
-                        <th>Estado</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {lotesAlerta.map((l) => (
-                        <tr
-                          key={l.id}
-                          className={l.estado === 'danger' ? 'row--danger' : 'row--warning'}
-                        >
-                          <td className="font-bold">{l.nombre}</td>
-                          <td>{l.faseNombre}</td>
-                          <td>{formatKg(l.requerimientoSemanalKg)}</td>
-                          <td>{formatKg(l.inventarioKg)}</td>
-                          <td className="font-bold">{l.bachesAPedir}</td>
-                          <td>
-                            <span
-                              className={`badge ${
-                                l.estado === 'danger' ? 'badge--danger' : 'badge--warning'
-                              }`}
-                            >
-                              {estadoDescripcion(l.estado, l.bachesAPedir)}
-                            </span>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-
-                <div className="mobile-cards">
-                  {lotesAlerta.map((l) => (
-                    <div
-                      key={l.id}
-                      className={`lote-card ${
-                        l.estado === 'danger' ? 'lote-card--danger' : 'lote-card--warning'
-                      }`}
-                    >
-                      <div className="lote-card__header">
-                        <div>
-                          <div className="lote-card__name">{l.nombre}</div>
-                          <div className="lote-card__meta">
-                            {l.faseNombre} · {l.edadSemanas} sem ·{' '}
-                            {formatNumber(l.numAnimales)} animales
-                          </div>
-                        </div>
-                        <span
-                          className={`badge ${
-                            l.estado === 'danger' ? 'badge--danger' : 'badge--warning'
-                          }`}
-                        >
-                          {estadoDescripcion(l.estado, l.bachesAPedir)}
-                        </span>
-                      </div>
-                      <div className="lote-card__body">
-                        <div className="lote-card__field">
-                          <div className="lote-card__field-label">Requer. semanal</div>
-                          <div className="lote-card__field-value">
-                            {formatKg(l.requerimientoSemanalKg)}
-                          </div>
-                        </div>
-                        <div className="lote-card__field">
-                          <div className="lote-card__field-label">Inventario</div>
-                          <div className="lote-card__field-value">{formatKg(l.inventarioKg)}</div>
-                        </div>
-                        <div className="lote-card__field">
-                          <div className="lote-card__field-label">Faltante</div>
-                          <div className="lote-card__field-value text-danger">
-                            {formatNumber(l.deficitKg)} kg
-                          </div>
-                        </div>
-                        <div className="lote-card__field">
-                          <div className="lote-card__field-label">Baches</div>
-                          <div className="lote-card__field-value">{l.bachesAPedir}</div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </>
+              <div className="dash-alert-summary">
+                {alertas1 > 0 && (
+                  <div className="dash-alert-summary__row dash-alert-summary__row--warning">
+                    <AlertTriangle />
+                    <span className="dash-alert-summary__count">{alertas1}</span>
+                    <span>{plural(alertas1, 'lote necesita', 'lotes necesitan')} 1 bache</span>
+                  </div>
+                )}
+                {alertas2 > 0 && (
+                  <div className="dash-alert-summary__row dash-alert-summary__row--warning">
+                    <AlertTriangle />
+                    <span className="dash-alert-summary__count">{alertas2}</span>
+                    <span>{plural(alertas2, 'lote necesita', 'lotes necesitan')} 2 baches</span>
+                  </div>
+                )}
+                {alertas3 > 0 && (
+                  <div className="dash-alert-summary__row dash-alert-summary__row--danger">
+                    <AlertTriangle />
+                    <span className="dash-alert-summary__count">{alertas3}</span>
+                    <span>{plural(alertas3, 'lote necesita', 'lotes necesitan')} 3+ baches</span>
+                  </div>
+                )}
+              </div>
             )}
           </div>
         </div>

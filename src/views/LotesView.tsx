@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Plus,
   Pencil,
@@ -12,6 +12,9 @@ import type { AppData, Lote, LoteCalculado, View } from '@/types';
 import { calcularTodos, formatNumber, formatKg, getCurrentWeek, plural, estadoDescripcion } from '@/utils';
 import { LoteModal } from '@/components/LoteModal';
 import { ConfirmDialog } from '@/components/ConfirmDialog';
+import { Pagination } from '@/components/Pagination';
+
+const PAGE_SIZE = 8;
 
 interface LotesViewProps {
   data: AppData;
@@ -34,16 +37,27 @@ export function LotesView({
   const [editingLote, setEditingLote] = useState<Lote | null>(null);
   const [confirmDelete, setConfirmDelete] = useState<Lote | null>(null);
   const [busqueda, setBusqueda] = useState('');
+  const [filtro, setFiltro] = useState<'todos' | 'faltante' | 'ok'>('todos');
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    setPage(1);
+  }, [busqueda, filtro]);
 
   const semanaActual = getCurrentWeek();
   const lotesCalc = calcularTodos(data.lotes, data.fases, data.config);
 
   const query = busqueda.trim().toLowerCase();
-  const lotesFiltrados = query
-    ? lotesCalc.filter(
-        (l) => l.nombre.toLowerCase().includes(query) || l.faseNombre.toLowerCase().includes(query)
-      )
-    : lotesCalc;
+  const lotesFiltrados = lotesCalc.filter((l) => {
+    if (query && !l.nombre.toLowerCase().includes(query) && !l.faseNombre.toLowerCase().includes(query))
+      return false;
+    if (filtro === 'faltante' && l.bachesAPedir <= 0) return false;
+    if (filtro === 'ok' && l.bachesAPedir > 0) return false;
+    return true;
+  });
+
+  const totalPages = Math.ceil(lotesFiltrados.length / PAGE_SIZE);
+  const lotesPaginados = lotesFiltrados.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
   const totalAnimales = data.lotes.reduce((s, l) => s + l.numAnimales, 0);
   const totalBaches = lotesCalc.reduce((s, l) => s + l.bachesAPedir, 0);
@@ -110,6 +124,29 @@ export function LotesView({
           )}
         </div>
       </div>
+
+      {data.lotes.length > 0 && (
+        <div className="filter-bar">
+          <button
+            className={`btn btn--sm ${filtro === 'todos' ? 'btn--primary' : 'btn--ghost'}`}
+            onClick={() => setFiltro('todos')}
+          >
+            Todos ({lotesCalc.length})
+          </button>
+          <button
+            className={`btn btn--sm ${filtro === 'faltante' ? 'btn--primary' : 'btn--ghost'}`}
+            onClick={() => setFiltro('faltante')}
+          >
+            Con faltante ({lotesCalc.filter((l) => l.bachesAPedir > 0).length})
+          </button>
+          <button
+            className={`btn btn--sm ${filtro === 'ok' ? 'btn--primary' : 'btn--ghost'}`}
+            onClick={() => setFiltro('ok')}
+          >
+            Inventario OK ({lotesCalc.filter((l) => l.bachesAPedir <= 0).length})
+          </button>
+        </div>
+      )}
 
       <div className="mini-strip">
         <div className="mini-strip__item">
@@ -193,7 +230,7 @@ export function LotesView({
                     </tr>
                   </thead>
                   <tbody>
-                    {lotesFiltrados.map((l) => (
+                    {lotesPaginados.map((l) => (
                       <LoteRow
                         key={l.id}
                         lote={l}
@@ -207,7 +244,7 @@ export function LotesView({
 
               {/* Mobile cards */}
               <div className="mobile-cards">
-                {lotesFiltrados.map((l) => (
+                {lotesPaginados.map((l) => (
                   <LoteMobileCard
                     key={l.id}
                     lote={l}
@@ -216,6 +253,14 @@ export function LotesView({
                   />
                 ))}
               </div>
+
+              <Pagination
+                page={page}
+                totalPages={totalPages}
+                totalItems={lotesFiltrados.length}
+                pageSize={PAGE_SIZE}
+                onPageChange={setPage}
+              />
             </>
           )}
         </>

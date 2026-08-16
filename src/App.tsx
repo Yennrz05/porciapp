@@ -94,16 +94,16 @@ function App() {
             </div>
           </div>
           <div className="topbar__right">
-            <span
-              className={`badge badge--backup ${
-                backupAntiguo ? 'badge--danger' : lastBackupText ? 'badge--success' : 'badge--neutral'
-              }`}
-            >
-              {backupAntiguo ? <TriangleAlert /> : <Database />}
-              {lastBackupText
-                ? `Último respaldo: ${lastBackupText}`
-                : 'Sin respaldo guardado'}
-            </span>
+            {lastBackupText && (
+              <span
+                className={`badge badge--backup ${
+                  backupAntiguo ? 'badge--danger' : 'badge--success'
+                }`}
+              >
+                {backupAntiguo ? <TriangleAlert /> : <Database />}
+                {`Último respaldo: ${lastBackupText}`}
+              </span>
+            )}
           </div>
         </header>
         <main className="content">
